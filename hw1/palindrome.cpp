@@ -1,4 +1,4 @@
-/**
+/*
  * Incorrect code to identify palindromes
  */
 
@@ -15,22 +15,26 @@ bool helper(stringstream &input, int len)
 	//if we are at the midpoint of the string, return true.
 	if (len == 0) return true;
 
-	/**
+	/*
 	 * If the length of the string is odd, and the next
 	 * character is the midpoint of the string, consume it
 	 * and return true.
 	 */
+
 	input >> prev;
-	if (len == 1) return true;
+	if (len == 1) return true;	 
 
 	bool val = helper(input, len-2);
 
 	//make your changes below this line.
-	if (val) return true;
-	return false;
+	char post;
+	input >> post;
+
+	if(prev == post) return true;
+	else return false;
 }
 
-//do not change the main function.
+//do not change the main function.f
 int main(int argc, char* argv[])
 {
   if(argc < 2){
